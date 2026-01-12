@@ -1,0 +1,12 @@
+body { font-family: system-ui, Arial, sans-serif; margin: 0; }
+.topbar { display:flex; justify-content:space-between; align-items:center; padding:16px; border-bottom:1px solid #ddd; position:sticky; top:0; background:#fff; }
+.container { padding:16px; }
+.grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:12px; }
+.card { border:1px solid #ddd; border-radius:12px; padding:12px; }
+.drawer { position:fixed; top:0; right:-420px; width:380px; max-width:90vw; height:100vh; background:#fff; border-left:1px solid #ddd; transition:right .2s ease; padding:16px; box-sizing:border-box; }
+.drawer.open { right:0; }
+.drawer-head, .drawer-foot { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.drawer-foot { margin-top:12px; }
+.cart-btn { padding:10px 12px; border-radius:10px; border:1px solid #ddd; background:#fff; cursor:pointer; }
+button { cursor:pointer; }
+.item { display:flex; justify-content:space-between; gap:10px; border-bottom:1px solid #eee; padding:10px 0; }
