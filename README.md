@@ -11,7 +11,7 @@ Mini progetto portfolio: catalogo prodotti + carrello laterale con persistenza s
 - Carrello laterale (drawer) con apertura automatica
 
 ## Screenshot
- ![Preview](./assets/preview.png)
+![Preview](./assets/preview.png)
 
 ## Tech stack
 - HTML
@@ -27,4 +27,4 @@ Mini progetto portfolio: catalogo prodotti + carrello laterale con persistenza s
 - DOM manipulation ed eventi
 - Gestione stato (carrello) in JavaScript
 - LocalStorage (load/save)
-- Struttura repo + deploy su GitHub Pages
+- Deploy con GitHub Pages
