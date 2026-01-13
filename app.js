@@ -17,6 +17,7 @@ const els = {
 
 const STORAGE_KEY = "cart_v1";
 let cart = loadCart();
+const EUR = new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" });
 
 function loadCart() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? {}; }
@@ -39,7 +40,7 @@ function renderProducts() {
   els.products.innerHTML = products.map(p => `
     <div class="card">
       <h3>${p.name}</h3>
-      <p>€ ${p.price.toFixed(2)}</p>
+      <p>${EUR.format(p.price)}</p>
       <button data-add="${p.id}">Aggiungi</button>
     </div>
   `).join("");
@@ -54,7 +55,7 @@ function renderCart() {
       <div class="item">
         <div>
           <strong>${i.name}</strong><br/>
-          € ${i.price.toFixed(2)} x ${i.qty}
+          ${EUR.format(i.price)} x ${i.qty}
         </div>
         <div>
           <button data-dec="${i.id}">-</button>
@@ -65,7 +66,7 @@ function renderCart() {
     `).join("");
 
   els.cartCount.textContent = String(cartQty());
-  els.cartTotal.textContent = cartSum().toFixed(2);
+  els.cartTotal.textContent = EUR.format(cartSum());
 }
 
 function addToCart(productId) {
@@ -108,6 +109,7 @@ function closeCart() { els.cartDrawer.classList.remove("open"); }
 els.products.addEventListener("click", (e) => {
   const id = e.target?.dataset?.add;
   if (id) addToCart(id);
+  openCart();
 });
 
 els.cartItems.addEventListener("click", (e) => {
